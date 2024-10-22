@@ -127,9 +127,9 @@ def edit_url(request, pk):
             )
     else:
         form = UrlForm(instance=url)
-    return render(request, 'botui/proxy_form.html', {
+    return render(request, 'botui/url_form.html', {
         'form': form,
-        'proxy': url,
+        'url': url,
         'module': 'Edit Data'
     })
 

@@ -19,7 +19,7 @@
                   {% for d in data %}
                   <tr class="table-active">
                       <td>{{ d.name }}</td>
-                      <td>{{ d.value }}</td>
+                      <td>{{ d.value|truncatechars:200 }}</td>
                       <td width="5%">
                         {% comment %} <button type="button" class="btn btn-sm btn-success"  hx-get="{% url 'botui_edit_multiproxy' pk=d.pk %}" hx-target="#dialog">Edit</button> {% endcomment %}
                         <button type="button" class="btn btn-sm btn-success"  hx-get="{% url 'botui_edit_setting' pk=d.pk %}" hx-target="#dialog">Edit</button>

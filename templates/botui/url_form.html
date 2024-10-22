@@ -2,7 +2,7 @@
 {% with WIDGET_ERROR_CLASS='is-invalid' %}
 <form hx-post="{{ request.path }}" hx-headers='{"X-CSRFToken":"{{ csrf_token }}"}' class="modal-content">
   <div class="modal-header">
-    <h5 class="modal-title">{{ module }} Proxy</h5>
+    <h5 class="modal-title">{{ module }} Hermes Product</h5>
     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
   </div>
   <div class="modal-body">
@@ -12,20 +12,20 @@
       <div class="invalid-feedback">{{ form.name.errors|first }}</div>
     </div>
     <div class="mb-3">
-        <label for="{{ form.http.id_for_label }}" class="form-label">HTTP Proxy</label>
-        {% render_field form.http class="form-control" placeholder="" %}
-        <div class="invalid-feedback">{{ form.http.errors|first }}</div>
+        <label for="{{ form.link.id_for_label }}" class="form-label">Product Link</label>
+        {% render_field form.link class="form-control" placeholder="" %}
+        <div class="invalid-feedback">{{ form.link.errors|first }}</div>
       </div>
       <div class="mb-3">
-        <label for="{{ form.https.id_for_label }}" class="form-label">HTTPS Proxy</label>
-        {% render_field form.https class="form-control" placeholder="" %}
-        <div class="invalid-feedback">{{ form.https.errors|first }}</div>
+        <label for="{{ form.mentionto.id_for_label }}" class="form-label">Mention To</label>
+        {% render_field form.mentionto class="form-control" placeholder="" %}
+        <div class="invalid-feedback">{{ form.mentionto.errors|first }}</div>
       </div>
     
 </div>
   <div class="modal-footer">
-    {% if proxy %}
-    <button type="button" class="btn btn-danger" hx-delete="{% url 'botui_remove_proxy' pk=proxy.id %}" hx-confirm="Remove Proxy?">Remove</button>
+    {% if url %}
+    <button type="button" class="btn btn-danger" hx-delete="{% url 'botui_remove_url' pk=url.id %}" hx-confirm="Remove Product?">Remove</button>
     <span class="flex-grow-1"></span>
     {% endif %}
     
